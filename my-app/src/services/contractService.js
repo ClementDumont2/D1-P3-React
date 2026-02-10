@@ -1,12 +1,19 @@
 import api from "./api";
 
 const contractService = {
-    getContracts: async () => {
+    getContracts: async (title, status) => {
         try {
-            const response = await api.get('/contracts')
+            const params = {};
+            if (title) params.title = title;
+            if (status) params.status = status;
+
+            const response = await api.get('/contracts', {
+                params: params
+            });
             return response.data;
         } catch (error) {
-            console.log('Erreur dans la récupération des datas')
+            console.error('Erreur dans la récupération des datas', error);
+            throw error;
         }
     }
 }
