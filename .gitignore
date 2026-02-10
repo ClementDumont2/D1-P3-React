@@ -417,3 +417,4 @@ FodyWeavers.xsd
 *.msm
 *.msp
 my-app/eslint.config.js
+my-app/package-lock.json
