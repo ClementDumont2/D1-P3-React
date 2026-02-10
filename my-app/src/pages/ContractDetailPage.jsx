@@ -34,8 +34,13 @@ const ContractDetailPage = () => {
         <p>Return to menu</p>
         </Link>
         {contract && contract.length !== 0 ? (
+            <div>
+            <Link to={`/contracts/update/${contract.id}`}>
+                <p>Edit contract</p>
+            </Link>
             <ContractDetail contract={contract} witcher={witcher}>
             </ContractDetail>
+            </div>
         ) : (
             <p>Can't show</p>
         )}

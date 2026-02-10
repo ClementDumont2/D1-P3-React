@@ -42,7 +42,13 @@ const ContractsPage = () => {
             </form>
 
             <h1>Contracts page</h1>
-            
+            <Link
+            to={'/contracts/create'}
+            >Create a contract</Link>
+            <br />
+            <Link
+            to={'/contracts/update'}
+            >Update a contract</Link>
             <div className="contracts-grid">
                 {contracts && contracts.length > 0 ? (
                     contracts.map((contract) => (

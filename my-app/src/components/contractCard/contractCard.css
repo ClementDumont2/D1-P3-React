@@ -3,7 +3,6 @@
     border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: 12px;
     padding: 1.5rem;
-    max-width: 400px;
     margin: 1rem 0;
     transition: transform 0.2s ease, border-color 0.2s ease;
     text-align: left;
@@ -71,7 +70,6 @@
 
 .page-container {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
@@ -88,7 +86,6 @@
 
 .contract-card {
     flex: 1 1 300px;
-    max-width: 400px;
     margin: 0;     
 }
 
