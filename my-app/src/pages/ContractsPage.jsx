@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react'
 import contractService from '../services/contractService'
 import ContractCard from '../components/contractCard/contractCard';
-import { Link, Links } from 'react-router-dom';
+import { Link, Links, useNavigate } from 'react-router-dom';
+import WitcherName from '../components/witcherName';
+import witcherService from '../services/witcherService';
+import { useWitcher } from '../context/WitcherContext';
 
 const ContractsPage = () => {
     const [contracts, setContracts] = useState([]);
+    const [witcher, setWitcher] = useState(null);
     const [title, setTitle] = useState('');
     const [status, setStatus] = useState('');
+    const {witcherId} = useWitcher();
 
     const handleChangeTitle = (event) => setTitle(event.target.value)
     const handleChangeStatus = (event) => setStatus(event.target.value)
@@ -21,13 +26,29 @@ const ContractsPage = () => {
                 console.error("Erreur API:", error);
             }
         }
+        const fetchWitcher = async (id) => {
+            try {
+                const witcherData = await witcherService.getWitcher(id);
+                setWitcher(witcherData);
+            } catch (error) {
+                
+            }
+        }
+        if (witcherId !== null) {
+            fetchWitcher(witcherId);
+        }
         fetchContracts();
-    }, [title, status]);
+    }, [title, status, witcherId]);
     
     return (
         <div className="page-container">
+            {witcher ? (
+                <WitcherName witcher={witcher}/>
+            ) : (
+            <Link to='/login'> Go to login</Link>
+            )}
             <form className="filter-form">
-                <input 
+                <input
                     type="text" 
                     placeholder='Contract title' 
                     onChange={handleChangeTitle} 
