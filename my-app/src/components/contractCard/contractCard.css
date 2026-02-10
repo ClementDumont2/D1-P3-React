@@ -49,6 +49,19 @@
     font-weight: 500;
 }
 
+.status-badge.available {
+    background-color: #28a745;
+    color: #fff;
+}
+.status-badge.completed {
+    background-color: #dc3545;
+    color: #fff;
+}
+.status-badge.assigned {
+    background-color: #fd7e14;
+    color: #fff;
+}
+
 @media (prefers-color-scheme: light) {
     .contract-card {
         background-color: #ffffff;
