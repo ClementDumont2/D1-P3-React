@@ -1,0 +1,102 @@
+.detail-container {
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(128, 128, 128, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: left;
+}
+
+.detail-header {
+    margin-bottom: 2rem;
+}
+
+.detail-title {
+    margin: 0;
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.detail-section h3 {
+    font-size: 0.9rem;
+    color: #646cff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.detail-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Le nouveau bandeau de Récompense */
+.detail-reward-box {
+    background: linear-gradient(90deg, rgba(255, 202, 40, 0.1) 0%, transparent 100%);
+    border-left: 4px solid #ffca28;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.reward-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffca28;
+    margin-bottom: 4px;
+}
+
+.reward-amount {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* Metadata */
+.detail-meta {
+    display: flex;
+    gap: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.status-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 600;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.status-badge.available { background: #2e7d32; color: #fff; }
+.status-badge.assigned { background: #ed6c02; color: #fff; }
+.status-badge.completed { background: #646cff; color: #fff; }
+
+.witcher-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: light) {
+    .detail-container { background: #fff; border-color: #ddd; }
+    .detail-title, .reward-amount, .witcher-name { color: #213547; }
+    .detail-reward-box { background: #fff8e1; }
+}

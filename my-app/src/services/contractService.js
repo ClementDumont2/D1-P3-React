@@ -15,6 +15,15 @@ const contractService = {
             console.error('Erreur dans la récupération des datas', error);
             throw error;
         }
+    },
+    getContract: async (id) => {
+        try {
+            const response = await api.get(`/contracts/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error('Erreur dans la récupération des datas', error);
+            throw error;
+        }
     }
 }
 

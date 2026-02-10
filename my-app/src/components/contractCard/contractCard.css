@@ -91,3 +91,10 @@
     max-width: 400px;
     margin: 0;     
 }
+
+.contract-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}

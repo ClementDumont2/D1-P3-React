@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import contractService from '../services/contractService'
 import ContractCard from '../components/contractCard/contractCard';
+import { Link, Links } from 'react-router-dom';
 
 const ContractsPage = () => {
     const [contracts, setContracts] = useState([]);
@@ -45,10 +46,15 @@ const ContractsPage = () => {
             <div className="contracts-grid">
                 {contracts && contracts.length > 0 ? (
                     contracts.map((contract) => (
-                        <ContractCard
-                            key={contract.id} 
-                            contract={contract}
-                        />
+                        <Link
+                            to={`/contracts/${contract.id}`}
+                            key={contract.id}
+                            className='contract-card-link'
+                        >
+                            <ContractCard
+                                contract={contract}
+                            />
+                        </Link>
                     ))
                 ) : (
                     <p className="no-data">No contract found for these filters.</p>
